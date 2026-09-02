@@ -1,0 +1,48 @@
+# 密钥与本地配置（切勿提交）
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 运行时数据（面试报告、上传文件、会话、音频）
+data/reports/*
+data/uploads/*
+data/sessions/*
+data/audio/*
+!data/reports/.gitkeep
+!data/uploads/.gitkeep
+!data/sessions/.gitkeep
+!data/audio/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# 日志与缓存
+*.log
+.cache/
+whisper_models/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
