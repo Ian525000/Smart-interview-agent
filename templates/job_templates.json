@@ -1,0 +1,110 @@
+{
+  "templates": [
+    {
+      "id": "bytedance_product",
+      "name": "字节跳动 - 产品经理",
+      "description": "字节产品岗标准面试题模板",
+      "sample_jd": "字节跳动产品经理，负责抖音/今日头条某垂类内容产品。要求：3年以上产品经验，有数据驱动意识，具备用户洞察和跨团队协作能力。",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "intro",
+          "text": "请用2-3分钟介绍一下你自己，重点说明与这个岗位最相关的经历。",
+          "suggested_minutes": 3,
+          "follow_up_enabled": false,
+          "rationale": "了解候选人背景和岗位匹配度"
+        },
+        {
+          "id": "q2",
+          "type": "project",
+          "text": "请详细介绍你负责的最成功的一个产品项目，包括背景、你的角色、关键决策和最终结果。",
+          "suggested_minutes": 5,
+          "follow_up_enabled": true,
+          "rationale": "深挖产品能力与ownership"
+        },
+        {
+          "id": "q3",
+          "type": "project",
+          "text": "在上述项目中，你如何做需求优先级排序？遇到了什么冲突，如何解决的？",
+          "suggested_minutes": 4,
+          "follow_up_enabled": true,
+          "rationale": "考察优先级判断和沟通能力"
+        },
+        {
+          "id": "q4",
+          "type": "project",
+          "text": "请分享一个产品上线后数据不达预期的案例，你如何分析问题并推动改进？",
+          "suggested_minutes": 5,
+          "follow_up_enabled": true,
+          "rationale": "考察数据意识和迭代能力"
+        },
+        {
+          "id": "q5",
+          "type": "case",
+          "text": "如果让你负责提升抖音某垂类内容的用户留存，你会如何分析和制定策略？",
+          "suggested_minutes": 6,
+          "follow_up_enabled": true,
+          "rationale": "考察产品case分析能力"
+        },
+        {
+          "id": "q6",
+          "type": "case",
+          "text": "如何在用户体验和商业变现之间做平衡？请结合具体场景说明。",
+          "suggested_minutes": 5,
+          "follow_up_enabled": true,
+          "rationale": "考察商业sense"
+        },
+        {
+          "id": "q7",
+          "type": "behavior",
+          "text": "描述一次你与研发或设计产生严重分歧的经历，你是如何处理的？",
+          "suggested_minutes": 4,
+          "follow_up_enabled": true,
+          "rationale": "考察跨团队协作"
+        },
+        {
+          "id": "q8",
+          "type": "behavior",
+          "text": "说一个你在高压下交付项目的经历，你如何应对压力和不确定性？",
+          "suggested_minutes": 4,
+          "follow_up_enabled": false,
+          "rationale": "考察抗压能力"
+        },
+        {
+          "id": "q9",
+          "type": "open",
+          "text": "你如何看待短视频行业未来1-2年的趋势？对字节有什么观察？",
+          "suggested_minutes": 4,
+          "follow_up_enabled": false,
+          "rationale": "考察行业洞察"
+        },
+        {
+          "id": "q10",
+          "type": "reverse",
+          "text": "你有什么问题想问我们团队或这个岗位的吗？",
+          "suggested_minutes": 3,
+          "follow_up_enabled": false,
+          "rationale": "反问环节"
+        }
+      ]
+    },
+    {
+      "id": "bytedance_product_mock",
+      "name": "字节产品 Mock 练习",
+      "description": "简化版 Mock 面试，适合快速练习",
+      "sample_jd": "字节跳动产品经理 Mock 练习",
+      "questions": [
+        {"id": "q1", "type": "intro", "text": "请简单介绍一下你自己。", "suggested_minutes": 2, "follow_up_enabled": false},
+        {"id": "q2", "type": "project", "text": "介绍一个你主导的产品项目。", "suggested_minutes": 4, "follow_up_enabled": true},
+        {"id": "q3", "type": "case", "text": "如何提升一款内容App的DAU？", "suggested_minutes": 5, "follow_up_enabled": true},
+        {"id": "q4", "type": "behavior", "text": "说一个你解决团队冲突的例子。", "suggested_minutes": 3, "follow_up_enabled": true},
+        {"id": "q5", "type": "open", "text": "你最近关注的产品趋势是什么？", "suggested_minutes": 3, "follow_up_enabled": false},
+        {"id": "q6", "type": "project", "text": "如何用数据验证一个产品假设？", "suggested_minutes": 4, "follow_up_enabled": true},
+        {"id": "q7", "type": "case", "text": "设计一个功能提升用户创作积极性。", "suggested_minutes": 5, "follow_up_enabled": true},
+        {"id": "q8", "type": "behavior", "text": "描述一次失败经历及复盘。", "suggested_minutes": 3, "follow_up_enabled": false},
+        {"id": "q9", "type": "open", "text": "为什么选择字节？", "suggested_minutes": 2, "follow_up_enabled": false},
+        {"id": "q10", "type": "reverse", "text": "你有什么问题想问面试官？", "suggested_minutes": 2, "follow_up_enabled": false}
+      ]
+    }
+  ]
+}

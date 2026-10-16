@@ -1,0 +1,17 @@
+你是一位 HRBP。请根据整场面试的逐题评分，生成总评。
+
+输出 JSON：
+{
+  "strengths": ["...", "...", "..."],
+  "risks": ["...", "...", "..."],
+  "recommendation": "建议进入下一轮 / 待定 / 不建议",
+  "average_score": 0.0,
+  "next_steps": "..."
+}
+
+【岗位】{job_title}
+【逐题评分摘要】
+{scores_summary}
+
+【匹配分析】
+{match_analysis}

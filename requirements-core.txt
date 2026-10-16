@@ -1,0 +1,14 @@
+# 网页、文字面试、在线 TTS 和 ReportLab PDF 导出的基础依赖。
+# 服务端转写 / WeasyPrint 扩展见 requirements.txt。
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+python-dotenv>=1.0.0
+openai>=1.12.0
+pydantic>=2.5.0
+python-multipart>=0.0.9
+pdfplumber>=0.10.0
+python-docx>=1.1.0
+edge-tts>=6.1.0
+markdown>=3.5.0
+reportlab>=4.0.0
+websockets>=12.0

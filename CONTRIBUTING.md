@@ -5,7 +5,7 @@
 ## 开始之前
 
 1. Fork 本仓库并克隆到本地。
-2. 使用 Python 3.10+ 创建虚拟环境并安装 `requirements.txt`。
+2. 使用 Python 3.10+ 创建虚拟环境并安装 `requirements-core.txt`；需要服务端转写与 WeasyPrint 时安装 `requirements.txt`。
 3. 复制 `.env.example` 为 `.env`，填入**你自己的** `LLM_API_KEY`。
 4. **不要**在代码、Issue、PR 或截图中粘贴真实密钥。
 
@@ -15,6 +15,8 @@
 - 新增配置项通过环境变量读取，并同步更新 `.env.example`（只放占位符，不放真实值）。
 - 不要提交 `data/` 下的运行时文件、本地报告或上传文档。
 - 提交前确认 `git status` 中没有 `.env`。
+- 修改网页流程后运行 `node --test tests/frontend-flow.test.cjs`（需 Node.js，测试不调用真实模型或麦克风）。
+- 按 README 使用虚构示例检查流程，不要将真实简历或录音作为测试文件上传。
 
 ## Pull Request
 

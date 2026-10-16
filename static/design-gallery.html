@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>背景视觉方案 · 智能面试 Agent</title>
+  <link rel="stylesheet" href="/static/background-preview.css?v=20261013-1">
+</head>
+<body>
+  <header class="review-toolbar">
+    <div class="review-title"><strong>背景视觉方案</strong><span>智能面试 Agent · 大厂互联网产品岗位</span></div>
+    <div class="review-controls">
+      <a class="gallery-app-link" href="/">进入正式应用 →</a>
+      <div class="theme-picker" role="group" aria-label="背景方向">
+        <button type="button" data-theme-choice="workbench" aria-pressed="false">产品思维 · 暖白</button>
+        <button type="button" data-theme-choice="office" aria-pressed="true">真实办公 · 蓝调</button>
+        <button type="button" data-theme-choice="dialogue" aria-pressed="false">智能对话 · 深蓝</button>
+      </div>
+      <div class="view-picker" role="group" aria-label="页面预览">
+        <button type="button" data-view-choice="prepare" aria-pressed="true">准备页</button>
+        <button type="button" data-view-choice="interview" aria-pressed="false">面试页</button>
+      </div>
+      <button class="device-toggle" type="button" aria-pressed="false">查看手机效果</button>
+    </div>
+    <p id="direction-description" class="direction-description">已应用真实办公方案。这里保留视觉对比；点击「进入正式应用」即可上传资料并开始面试。</p>
+  </header>
+
+  <main id="design-stage" class="design-stage" data-theme="office" data-view="prepare">
+    <section class="prepare-view" aria-label="面试准备页方案">
+      <div class="hero">
+        <div class="hero-shade"></div>
+        <header class="product-header">
+          <a class="product-brand" href="/" aria-label="返回当前面试网页"><span class="brand-symbol" aria-hidden="true">i</span><span>智能面试 <b>Agent</b></span></a>
+          <span class="product-category">大厂互联网产品岗位</span>
+          <span class="product-meta">你的下一场面试，从这里开始</span>
+        </header>
+        <div class="hero-content">
+          <p class="hero-kicker"><span></span> AI 驱动的个性化模拟面试</p>
+          <h1>把产品思考，<br>练成面试表达。</h1>
+          <p class="hero-description">从你的 JD 和简历出发，练习 10 道专属问题。<br>在真实对话里梳理经历，在逐题反馈中找到提升方向。</p>
+          <button class="product-button primary hero-action" type="button">上传资料，开始准备 <span aria-hidden="true">↗</span></button>
+          <div class="hero-features"><span>专属题目</span><span>语音与文字</span><span>深度追问</span><span>逐题反馈</span></div>
+        </div>
+        <p class="image-caption">用户洞察 · 产品判断 · 数据思维</p>
+      </div>
+      <div class="preparation-body">
+        <div class="workflow" aria-label="面试流程"><span class="current">01 上传材料</span><span>02 预览题目</span><span>03 回答方式</span><span>04 正式面试</span><span>05 评估报告</span></div>
+        <div class="preparation-grid">
+          <section class="materials-panel">
+            <div class="panel-heading"><div><p class="small-kicker">准备好你的资料</p><h2>让每一道题，都与你有关。</h2></div><span class="privacy-note">仅用于本次模拟</span></div>
+            <div class="upload-grid">
+              <div class="upload-zone"><span class="upload-symbol" aria-hidden="true">JD</span><h3>岗位说明</h3><p>上传目标岗位 JD<br>明确职责与能力要求</p><button type="button" class="product-button secondary preview-action">选择 JD 文件</button><small>PDF / Word / TXT</small></div>
+              <div class="upload-zone"><span class="upload-symbol" aria-hidden="true">CV</span><h3>个人简历</h3><p>上传你的最新简历<br>围绕真实经历展开提问</p><button type="button" class="product-button secondary preview-action">选择简历文件</button><small>PDF / Word / TXT</small></div>
+            </div>
+            <div class="materials-actions"><button type="button" class="product-button primary preview-action">生成 10 道专属面试题 <span aria-hidden="true">→</span></button><span>也可以直接粘贴文本</span></div>
+          </section>
+          <aside class="history-panel"><p class="small-kicker">每一次练习，都有迹可循</p><h2>继续上次面试</h2><div class="history-example"><div class="history-topline"><span>产品经理 · 用户增长</span><span class="history-status">已完成</span></div><p>10 道题 · 2 次追问</p><button type="button" class="text-button preview-action">查看评估报告 <span aria-hidden="true">↗</span></button></div><div class="history-empty"><span class="history-empty-mark" aria-hidden="true">↗</span><p>你的下一次进步，<br>会从下一次练习开始。</p></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="interview-view" aria-label="正式面试页方案" hidden>
+      <div class="interview-backdrop"></div>
+      <div class="interview-tint"></div>
+      <header class="product-header interview-product-header"><a class="product-brand" href="/"><span class="brand-symbol" aria-hidden="true">i</span><span>智能面试 <b>Agent</b></span></a><span class="product-category">产品经理 · 模拟面试</span><span class="interview-save">本题回答持续保留</span></header>
+      <div class="interview-heading"><div><p class="small-kicker">专注这一刻的表达</p><h1>第 3 / 10 题 · 项目深挖</h1><p>结合真实案例，讲清你的判断、行动与结果。</p></div><span class="interview-mode">语音回答</span></div>
+      <div class="interview-grid">
+        <aside class="progress-panel"><div class="progress-heading"><h2>题目进度</h2><span>已答 2 / 10</span></div><div class="question-progress"><button class="question-row answered" type="button"><span>01</span><div>自我介绍<small>已完成</small></div><b>✓</b></button><button class="question-row answered" type="button"><span>02</span><div>项目深挖<small>已完成 · 1 次追问</small></div><b>✓</b></button><button class="question-row current" type="button"><span>03</span><div>项目深挖<small>正在回答</small></div><b>●</b></button><button class="question-row" type="button"><span>04</span><div>产品 Case<small>待作答</small></div></button><button class="question-row" type="button"><span>05</span><div>数据分析<small>待作答</small></div></button><button class="question-row" type="button"><span>06</span><div>行为面试<small>待作答</small></div></button></div><p class="progress-note">面试官会根据回答展开追问。</p></aside>
+        <div class="conversation-panel">
+          <section class="question-panel"><div class="conversation-label"><span><span class="speaker-avatar" aria-hidden="true">AI</span>面试官 · 项目深挖</span><span class="speech-label">已播报</span></div><h2>请分享一次你通过用户研究，<br class="desktop-break">推动产品方案调整的经历。</h2><p>你是如何发现问题、做出取舍，并验证方案效果的？</p><button class="text-button replay-preview" type="button">▶ 重播问题</button></section>
+          <section class="answer-panel"><div class="answer-label"><span>你的回答</span><span class="recording-badge"><i></i>录音中 <b id="preview-countdown">01:26</b></span></div><p class="answer-text">在我负责的商家工具项目中，我们最初判断使用率低是因为功能入口不够明显。但访谈了 12 位商家后，我发现真正的问题是：他们并不清楚数据指标能帮助自己做出什么决策。<br><br>因此，我把方案从“增加入口曝光”调整为“围绕经营任务组织数据”，并优先验证了商品诊断这一场景<span class="typing-cursor" aria-hidden="true"></span></p><div class="answer-footer"><span>正在持续转写，之前的内容会保留</span><span>最长 2 分钟</span></div></section>
+          <div class="interview-actions"><button class="product-button stop-button" type="button" id="preview-stop">■ 停止录音</button><button class="product-button primary preview-action" type="button">提交回答 →</button><button class="product-button subtle preview-action" type="button">重答本题</button><button class="product-button subtle preview-action" type="button">跳过</button></div>
+        </div>
+      </div>
+    </section>
+    <p class="preview-notice" role="status" aria-live="polite">视觉方案预览 · 示例内容 · 不创建面试记录</p>
+  </main>
+  <script src="/static/background-preview.js?v=20261013-1"></script>
+</body>
+</html>

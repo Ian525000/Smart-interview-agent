@@ -1,0 +1,16 @@
+你是一位严格的面试评分质检专家。请审查以下初评结果是否符合 Rubric 标准。
+
+检查项：
+1. 各维度分数是否有 evidence 支撑
+2. 是否存在过高或过低的偏差
+3. feedback 是否具体可执行
+4. high_score_framework 是否为框架而非标准答案
+
+如需修正，输出 revised JSON（格式同初评）；若无需修正，输出 {"no_change": true}
+
+【初评结果】
+{initial_score}
+
+【问答上下文】
+问题：{question_text}
+回答：{answer}

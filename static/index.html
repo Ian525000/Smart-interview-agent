@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>智能面试 Agent · 大厂互联网产品岗位</title>
+  <link rel="stylesheet" href="/static/style.css?v=20260901-report2">
+  <link rel="stylesheet" href="/static/figma-theme.css?v=20261013-1">
+  <link rel="stylesheet" href="/static/office-theme.css?v=20261013-office-2">
+  <link rel="preload" href="/static/assets/backgrounds/office-blue-hour-v1.png" as="image">
+</head>
+<body data-step="step-upload">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <span class="brand-mark" aria-hidden="true">i</span>
+      <span class="brand-name">智能面试 Agent</span>
+      <span class="brand-description">大厂互联网产品岗位 · 个性化模拟面试</span>
+      <span class="header-note">你的下一场面试，从这里开始</span>
+    </div>
+  </header>
+  <section id="landing-hero" class="landing-hero" aria-labelledby="landing-title">
+    <div class="landing-hero-inner">
+      <p class="hero-kicker"><span aria-hidden="true"></span>AI 驱动的个性化模拟面试</p>
+      <h1 id="landing-title">把产品思考，<br>练成面试表达。</h1>
+      <p class="hero-description">从你的 JD 和简历出发，练习 10 道专属问题。<br>在真实对话里梳理经历，在逐题反馈中找到提升方向。</p>
+      <button id="btn-start-preparation" class="btn primary hero-action" type="button">上传资料，开始准备 <span aria-hidden="true">↗</span></button>
+      <div class="hero-features"><span>专属题目</span><span>语音与文字</span><span>深度追问</span><span>逐题反馈</span></div>
+      <p class="hero-image-caption">用户洞察 · 产品判断 · 数据思维</p>
+    </div>
+  </section>
+  <div class="container">
+    <nav class="workflow-steps" aria-label="面试流程">
+      <span class="workflow-step active" data-target="step-upload" aria-current="step">01 上传材料</span>
+      <span class="workflow-step" data-target="step-preview">02 预览题目</span>
+      <span class="workflow-step" data-target="step-mode">03 回答方式</span>
+      <span class="workflow-step" data-target="step-interview">04 正式面试</span>
+      <span class="workflow-step" data-target="step-report">05 评估报告</span>
+    </nav>
+    <main>
+      <section id="step-upload" class="step active">
+        <div class="setup-grid">
+          <div class="surface-card upload-card">
+            <p class="panel-kicker">准备好你的资料</p>
+            <h2>让每一道题，都与你有关。</h2>
+            <p class="upload-intro">上传岗位说明与简历，围绕目标岗位和你的真实经历生成问题。</p>
+            <div class="upload-fields">
+              <div class="form-group upload-field">
+                <label for="jd-file"><span class="upload-file-symbol" aria-hidden="true">JD</span><strong>岗位 JD</strong><span class="upload-caption">明确职责与能力要求</span></label>
+                <input type="file" id="jd-file" accept=".pdf,.docx,.doc,.txt,.md">
+                <p class="form-hint">支持 PDF、Word、TXT、Markdown</p>
+              </div>
+              <div class="form-group upload-field">
+                <label for="resume-file"><span class="upload-file-symbol" aria-hidden="true">CV</span><strong>个人简历</strong><span class="upload-caption">围绕真实经历展开提问</span></label>
+                <input type="file" id="resume-file" accept=".pdf,.docx,.doc,.txt,.md">
+                <p class="form-hint">建议使用与目标岗位相关的最新版本</p>
+              </div>
+            </div>
+            <details class="paste-details">
+              <summary>直接粘贴 JD 与简历文本</summary>
+              <div class="form-group"><label for="jd-text">岗位 JD 文本</label><textarea id="jd-text" placeholder="粘贴岗位说明..." rows="4"></textarea></div>
+              <div class="form-group"><label for="resume-text">简历文本</label><textarea id="resume-text" placeholder="粘贴简历内容..." rows="4"></textarea></div>
+            </details>
+            <div class="form-row">
+              <div class="form-group"><label for="template-select">岗位模板</label><select id="template-select"><option value="">自动生成（AI）</option></select></div>
+              <div class="form-group checkbox-group"><label><input type="checkbox" id="mock-mode"> Mock 练习模式</label></div>
+            </div>
+            <button id="btn-create" class="btn primary" type="button">生成面试题</button>
+            <div id="upload-status" class="status" role="status" aria-live="polite"></div>
+          </div>
+          <aside class="surface-card history-card">
+            <p class="panel-kicker">每一次练习，都有迹可循</p>
+            <div class="history-heading-row"><h2>继续上次面试</h2><button id="btn-refresh-sessions" class="btn small secondary" type="button">刷新</button></div>
+            <p class="card-subtitle">选择一条记录恢复进度或查看报告</p>
+            <div class="session-toolbar">
+              <label class="checkbox-inline"><input type="checkbox" id="session-check-all"> 全选</label>
+              <span id="session-selected-count" class="session-count">已选 0 条</span>
+            </div>
+            <div id="session-list" class="session-list"><p class="session-empty">正在加载历史面试…</p></div>
+            <div class="session-actions">
+              <button id="btn-resume" class="btn secondary" type="button">恢复选中</button>
+              <button id="btn-delete-session" class="btn danger" type="button">删除选中</button>
+            </div>
+            <p class="form-hint">恢复时选择 1 条；可选择多条批量删除。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="step-preview" class="step">
+        <div class="step-heading">
+          <p class="eyebrow">题目可在开始前调整</p>
+          <h1>预览并编辑面试题</h1>
+          <p>围绕个人经历、产品判断、团队协作和行业洞察。修改仅影响本次面试。</p>
+        </div>
+        <div class="preview-grid">
+          <div class="surface-card question-list-card">
+            <div class="section-title-row"><h2>本次题目</h2><span>点击题目即可编辑</span></div>
+            <div id="questions-list"></div>
+          </div>
+          <aside class="surface-card preview-summary">
+            <h2>岗位匹配摘要</h2>
+            <div id="session-info" class="info-card"></div>
+            <p class="form-hint">建议在进入正式面试前检查题目表述。</p>
+            <div class="preview-actions">
+              <button id="btn-to-mode" class="btn primary" type="button">下一步：选择回答方式</button>
+              <button id="btn-view-report" class="btn secondary hidden" type="button">查看面试报告</button>
+              <button id="btn-preview-back" class="btn secondary" type="button">返回上传资料</button>
+            </div>
+            <div id="preview-status" class="status" role="status" aria-live="polite"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="step-mode" class="step">
+        <div class="step-heading">
+          <p class="eyebrow">整场面试统一设置</p>
+          <h1>选择你更自在的回答方式</h1>
+          <p>确认后进入独立的正式面试界面；所有题目沿用同一种回答方式。</p>
+        </div>
+        <div class="mode-options">
+          <button id="btn-mode-voice" class="btn mode-btn" type="button" aria-pressed="false">
+            <span class="mode-icon" aria-hidden="true">🎙</span><strong>语音回答</strong>
+            <span>面试官播报问题；支持实时转写，必要时停止后转写。</span>
+            <small>2 分钟倒计时 · 可停止 · 可重答</small><em>点击选择</em>
+          </button>
+          <button id="btn-mode-text" class="btn mode-btn" type="button" aria-pressed="false">
+            <span class="mode-icon" aria-hidden="true">⌨</span><strong>文字回答</strong>
+            <span>阅读问题后在输入框作答，适合安静环境。</span>
+            <small>可编辑长答案 · 提交前确认</small><em>点击选择</em>
+          </button>
+        </div>
+        <div class="mode-note">语音模式进入面试前会检查麦克风权限。两种模式均可查看题目和报告。</div>
+        <div class="mode-actions"><button id="btn-begin-interview" class="btn primary" type="button" disabled>确认并开始面试</button><button id="btn-mode-back" class="btn secondary" type="button">返回编辑题目</button></div>
+        <div id="mode-status" class="status" role="status" aria-live="polite"></div>
+      </section>
+
+      <section id="step-interview" class="step">
+        <div class="step-heading interview-heading">
+          <p class="eyebrow">模拟面试进行中</p>
+          <h1 id="interview-heading">正式面试</h1>
+          <p id="interview-description">阅读或听完问题后作答；面试官会根据回答选择追问。</p>
+        </div>
+        <div class="interview-layout">
+          <aside class="q-sidebar" aria-label="题目导航">
+            <h2 class="q-nav-label">题目进度</h2>
+            <div id="question-nav" class="question-nav"></div>
+            <p class="q-nav-legend"><span class="q-nav-dot current"></span>当前 <span class="q-nav-dot answered"></span>已答 <span class="q-nav-dot skipped"></span>已跳过</p>
+          </aside>
+          <div class="interview-main">
+            <div class="interview-topline"><div class="progress-bar"><div id="progress-fill"></div></div><p id="progress-text" class="progress-text">准备中...</p></div>
+            <div class="interview-panel">
+              <div class="agent-bubble">
+                <div class="bubble-header"><span id="agent-role-label" class="label">面试官</span><span id="speech-state" class="speech-state" role="status" aria-live="polite">等待提问</span></div>
+                <p id="agent-text" class="typewriter-text">等待第一题...</p>
+                <button id="btn-replay" class="btn small" type="button" disabled>▶ 重播语音</button>
+              </div>
+              <div class="user-bubble">
+                <div class="bubble-header"><span class="label">你的回答 <span id="answer-mode-label"></span></span><p id="recording-timer" class="recording-timer hidden" role="timer">录音剩余 2:00</p></div>
+                <p id="user-transcript" class="transcript typewriter-text hidden">（点击「开始回答」后说话）</p>
+                <textarea id="text-answer" class="hidden" placeholder="在此输入你的回答..." rows="6"></textarea>
+                <p id="answer-helper" class="answer-helper">回答内容会保留到提交或重答本题。</p>
+              </div>
+            </div>
+            <div id="answer-controls" class="controls">
+              <button id="btn-mic" class="btn primary hidden" type="button">🎤 开始回答</button>
+              <button id="btn-submit" class="btn primary" type="button">提交回答</button>
+              <button id="btn-retry" class="btn secondary" type="button">重答本题</button>
+              <button id="btn-skip" class="btn secondary" type="button">跳过</button>
+              <button id="btn-prev-q" class="btn secondary" type="button">上一题</button>
+              <button id="btn-next-q" class="btn secondary" type="button">下一题</button>
+              <button id="btn-finish-interview" class="btn secondary" type="button">完成面试</button>
+            </div>
+            <div id="interview-status" class="status" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="step-report" class="step">
+        <div class="step-heading"><p class="eyebrow">本次模拟已完成</p><h1>面试评估报告</h1><p>根据你的回答生成反馈；分数用于练习定位，不代表实际招聘结论。</p></div>
+        <div id="report-status" class="status" role="status" aria-live="polite"></div>
+        <button id="btn-report-retry" class="btn secondary hidden" type="button">重新加载报告</button>
+        <div id="report-summary"></div>
+        <div class="surface-card report-detail-card">
+          <div class="section-title-row"><h2>逐题反馈</h2><span>评分、证据与高分作答框架</span></div>
+          <div id="scores-list"></div>
+        </div>
+        <div id="report-downloads" class="download-panel">
+          <div class="download-group"><p class="download-title">评估报告</p><p class="download-desc">综合评分、逐题反馈与高分框架</p><div class="controls"><a id="btn-download-pdf" class="btn primary" href="#" download>下载 PDF</a><a id="btn-download-md" class="btn secondary" href="#" download>下载 Markdown</a></div></div>
+          <div class="download-group"><p class="download-title">问答实录</p><p class="download-desc">面试官提问与候选人完整作答</p><div class="controls"><a id="btn-download-qa-pdf" class="btn primary" href="#" download>下载 PDF</a><a id="btn-download-qa-md" class="btn secondary" href="#" download>下载 Markdown</a></div></div>
+        </div>
+        <div class="controls report-restart"><button id="btn-report-back" class="btn secondary" type="button">返回本次题目</button><button id="btn-restart" class="btn secondary" type="button">重新开始</button></div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/app.js?v=20261013-office-2"></script>
+</body>
+</html>

@@ -1,14 +1,4 @@
-fastapi>=0.110.0
-uvicorn[standard]>=0.27.0
-python-dotenv>=1.0.0
-openai>=1.12.0
-pydantic>=2.5.0
-python-multipart>=0.0.9
-pdfplumber>=0.10.0
-python-docx>=1.1.0
-edge-tts>=6.1.0
-markdown>=3.5.0
+# 完整安装：基础功能 + 可选的 PDF 排版与服务端语音识别。
+-r requirements-core.txt
 weasyprint>=60.0
-reportlab>=4.0.0
 faster-whisper>=1.0.0
-websockets>=12.0

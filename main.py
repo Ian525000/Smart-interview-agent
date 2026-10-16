@@ -70,6 +70,12 @@ class UpdateQuestionBody(BaseModel):
     questions: List[Question]
 
 
+@app.get("/api/health")
+async def health_check():
+    """供本地启动器检查服务是否已就绪。"""
+    return {"status": "ok", "service": "interview-agent"}
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index():
     """首页。"""
@@ -375,7 +381,7 @@ async def get_config():
 def run():
     """启动服务。"""
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=SERVER_PORT, reload=True)
+    uvicorn.run(app, host="127.0.0.1", port=SERVER_PORT, reload=False)
 
 
 if __name__ == "__main__":
